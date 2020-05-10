@@ -1,6 +1,8 @@
 import React from "react"
 import { createGlobalStyle, ThemeProvider } from "styled-components"
+import { MDXProvider } from "@mdx-js/react"
 import Theme from "./src/themes/theme"
+import { Table } from "./src/components"
 
 const GlobalStyles = createGlobalStyle`
   *{
@@ -14,10 +16,16 @@ const GlobalStyles = createGlobalStyle`
     background-color: ${props => props.theme.colors.light1};
   }
 `
+// With this we will use this React component to overwrite the table styles.
+const components = {
+  table: Table,
+}
 
 export const wrapRootElement = ({ element }) => (
-  <ThemeProvider theme={Theme}>
-    <GlobalStyles />
-    {element}
-  </ThemeProvider>
+  <MDXProvider components={components}>
+    <ThemeProvider theme={Theme}>
+      <GlobalStyles />
+      {element}
+    </ThemeProvider>
+  </MDXProvider>
 )
