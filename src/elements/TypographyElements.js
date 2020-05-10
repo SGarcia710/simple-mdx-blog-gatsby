@@ -14,6 +14,7 @@ export const P = styled.p`
         return "1.12rem"
     }
   }};
+  text-transform: ${props => (props.capitalize ? "capitalize" : "none")};
   line-height: ${props => {
     switch (props.size) {
       case "medium":
