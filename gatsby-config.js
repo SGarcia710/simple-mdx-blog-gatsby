@@ -1,4 +1,12 @@
 module.exports = {
+  siteMetadata: {
+    title: "SGarcia710's MDX Blog",
+    description: "Un blog simple hecho con Gatsby y MDX",
+    url: "http://sgarcia.site",
+    image: "/seo.jpg",
+    twitterUsername: "@sebg96",
+    author: "@SGarcia710",
+  },
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
@@ -32,7 +40,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 1800,
+              maxWidth: 1200,
               quality: 100,
             },
           },
